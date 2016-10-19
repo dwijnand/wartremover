@@ -107,6 +107,15 @@ println({} + "test")
 x.asInstanceOf[String]
 ```
 
+### CaseClass
+
+Scala's case classes are impossible to change without potentially introducing bugs (with a different `toString`) or breaking binary compatibility (different `constructor`, `copy`, companion `apply` and companion `unapply`).
+
+```scala
+// Won't compile: case classes are disabled
+case class Foo()
+```
+
 ### DefaultArguments
 
 Scala allows methods to have default arguments, which make it hard to use methods as functions.
